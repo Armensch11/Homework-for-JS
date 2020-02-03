@@ -57,7 +57,7 @@ console.log (`average of the entered numbers is ${average}`);
               //exercise 5 solution after Monday lesson
 
               let sum = 0;
-              let average=0
+              let average = 0;
               for ( i = 1; i <= 5; i++) {
                       sum = sum + (+prompt ('enter number'));
                       average = sum/i;
