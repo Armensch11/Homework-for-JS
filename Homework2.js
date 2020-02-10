@@ -267,3 +267,30 @@ for (let i = 0; i < numArray.length; i++) {
       }
 
 console.log(`min is ${min}, max is ${max}, result is ${max-min}`);
+
+
+
+
+
+//additional solution for Exercise 3 without using any method
+
+
+let aNumber = + prompt();
+let lastDigit = aNumber%10;
+let newString = '';
+let digitCounter = 0
+for (let newNum = aNumber; newNum > 0; newNum = ((newNum-lastDigit)/10)) {
+    lastDigit = newNum%10;
+    digitCounter++; 
+    newString += +lastDigit;
+}
+//console.log(newString);
+//getting the first and last digits of the entered number
+let old_FirstDigit = +newString%10;
+let old_LastDigit = aNumber%10;
+//making new number by removing first and last digits of the entered number
+let subNumber = ((aNumber - old_LastDigit) - old_FirstDigit * (10**(digitCounter - 1)))/10;
+console.log(aNumber);
+console.log(subNumber);
+let reversedNumber = ''+old_LastDigit + subNumber + old_FirstDigit;
+console.log(reversedNumber); 
