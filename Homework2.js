@@ -292,5 +292,5 @@ let old_LastDigit = aNumber%10;
 let subNumber = ((aNumber - old_LastDigit) - old_FirstDigit * (10**(digitCounter - 1)))/10;
 console.log(aNumber);
 console.log(subNumber);
-let reversedNumber = ''+old_LastDigit + subNumber + old_FirstDigit;
+let reversedNumber = +(''+old_LastDigit + subNumber + old_FirstDigit);
 console.log(reversedNumber); 
