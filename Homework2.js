@@ -294,3 +294,118 @@ console.log(aNumber);
 console.log(subNumber);
 let reversedNumber = +(''+old_LastDigit + subNumber + old_FirstDigit);
 console.log(reversedNumber); 
+
+
+
+
+
+
+
+
+/* as I did not know of the functions when the homework was done,
+present some practice with functions. 
+May skip this if considered irrelevant */
+
+//function to check for type of entered ONE number
+function EntryCheckForNumbers() {
+    let userEntry ;      
+    do {userEntry = +prompt('attention please - only Numbers');}    
+    while (userEntry !== +userEntry || userEntry === 0); 
+    console.log ('Thank you very much');
+    return userEntry;
+}
+
+//let myNumber = EntryCheckForNumbers();
+//console.log (myNumber); 
+/////////////////////////////////////////////////
+
+// function to check for the type of entered data until an empty string entry or  a cancel is pressed
+
+function EntryCheckForManyNumbers() {
+    let userEntry = [];
+    let i = 0;
+    let enteredValue;
+    for (;;i++) {
+        enteredValue = prompt('attention please - only Numbers');
+        if ( enteredValue != null && !isNaN(+enteredValue) && enteredValue !== '') {
+            userEntry [i] = +enteredValue;
+            } else break;
+    
+    }      
+       //console.log ('Thank you very much');
+    return userEntry;
+}   
+
+//let EntryArr = EntryCheckForManyNumbers();
+//console.log (EntryArr);
+
+//function finds min max of the array elements, but returns only max
+
+function Max_Finder() {
+        let numbers = EntryCheckForManyNumbers();
+        let max = numbers [0]; 
+        let min = numbers [numbers.length-1] ;
+        for (let i = 0; i < numbers.length; i++){
+            if (max < numbers[i]) {
+                max = numbers[i];
+            }
+             if ( min > numbers[i]) {
+                min = numbers[i];
+            }
+        } 
+        //console.log(numbers);
+          //  console.log(min, max);
+        return max;
+        
+        }
+
+//this one returns min number 
+
+function Min_Finder() {
+        let numbers = EntryCheckForManyNumbers();
+        let max = numbers [0]; 
+        let min = numbers [numbers.length-1] ;
+        for (let i = 0; i < numbers.length; i++){
+            if (max < numbers[i]) {
+                max = numbers[i];
+            }
+             if ( min > numbers[i]) {
+                min = numbers[i];
+            }
+        } 
+        //console.log(numbers);
+        //console.log(min, max);
+        return min;
+        }
+
+  
+//let find_Max = Max_Finder();
+//console.log(find_Max);
+        
+
+//let find_Min = Min_Finder();
+//console.log(find_Min);
+
+//evrika - both min and max returned as an array :)
+function ReturnArrayOf_MaxMin() {
+    let numbers = EntryCheckForManyNumbers();
+    let max = numbers [0]; 
+    let min = numbers [numbers.length-1] ;
+    for (let i = 0; i < numbers.length; i++){
+        if (max < numbers[i]) {
+            max = numbers[i];
+        }
+         if ( min > numbers[i]) {
+            min = numbers[i];
+        }
+    } 
+    let arrayFor_2_values = [];
+    arrayFor_2_values.push(max);
+    arrayFor_2_values.push(min);
+    //console.log(numbers);
+    //console.log(min, max);
+    return arrayFor_2_values;
+    }
+
+let max_min_array = ReturnArrayOf_MaxMin();
+console.log(max_min_array);
