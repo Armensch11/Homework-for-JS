@@ -415,31 +415,29 @@ console.log(max_min_array);
 now lets make a function that will get an array from a string,
 which contains numbers separated by comas
 */
-function StringEntrytoArray() {  
-    let stringOf_Numbers = prompt('enter numbers separated by comas');
-    let get_Numbers = [];
-    let number_Holder = '';
+function StringEntrytoArray() {  let stringOf_Numbers = prompt('enter numbers separated by comas');
+let get_Numbers = [];
+let number_Holder = '';
 //console.log(stringOf_Numbers.length);
     for ( let i = 0, j = 0; i < stringOf_Numbers.length; i++) {
        
         if (!isNaN(+stringOf_Numbers[i])) {
             number_Holder += stringOf_Numbers[i];
-        } else {
+        } else if (Boolean(+stringOf_Numbers[i])==false) {
             get_Numbers[j] = +number_Holder;
             j++;
             number_Holder = '';
-            
         }
     }
-    if (+stringOf_Numbers[stringOf_Numbers.length-1]) {
+    if (Boolean(+stringOf_Numbers[stringOf_Numbers.length-1])) {
         get_Numbers.push(+number_Holder);
     }
 console.log (stringOf_Numbers);
 return get_Numbers;
 }
-// could not get how to solve the issue with assigning the last value to array , inside the loop 
+
 let newNumbers = StringEntrytoArray();
-console.log(newNumbers);
+console.log(`new array is ${newNumbers}`);
 
 
 
