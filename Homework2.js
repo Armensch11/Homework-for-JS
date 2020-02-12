@@ -481,7 +481,7 @@ function searchfor_2_digits(number, search) {
 
 //searchfor_2_digits(5421542154246, 24);
 
-
+// solved only for positive numbers
 function sorting_numbers_decsending (){
     let randomList = StringEntrytoArray();
     let min = 100;
