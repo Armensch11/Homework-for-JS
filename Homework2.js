@@ -441,3 +441,43 @@ console.log(`new array is ${newNumbers}`);
 
 
 
+
+
+
+function digitremover(number, digit) {
+    let numberDigits = [];
+    number = String(number);
+    for (let i = 0; i < number.length; i++) {
+        if (number[i] != +digit) {
+            numberDigits.push(number[i]); 
+        }
+    }
+    console.log(numberDigits);
+    if (numberDigits.lenght===number.lenght) {
+        console.log(` there is no ${digit} digit in the number you entered`);
+    } else {
+        number = "";
+        for ( let i=0; i < numberDigits.length; i++) {
+        number +=numberDigits[i];
+            } 
+        }
+        return +number;
+}
+ 
+function searchfor_2_digits(number, search) {
+    let counter = 0;
+    number = String(number);    
+    for (let i = 0; i < number.length; i++) {
+        if (+number[i] == search%10 && +number[i-1] == Math.floor(search/10) ) {
+            counter+=1;            
+        }            
+    } 
+    if (counter!==0) {console.log (`number ${search} apears in the entered number ${counter} times`);
+    } else {console.log (` I could not find ${search} in entered number`);}
+
+}
+
+searchfor_2_digits(5421542154246, 24);
+
+
+
