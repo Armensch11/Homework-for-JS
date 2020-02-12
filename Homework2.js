@@ -463,7 +463,9 @@ function digitremover(number, digit) {
         }
         return +number;
 }
- 
+
+// search for 2 digit number
+
 function searchfor_2_digits(number, search) {
     let counter = 0;
     number = String(number);    
