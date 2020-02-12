@@ -479,7 +479,21 @@ function searchfor_2_digits(number, search) {
 
 }
 
-searchfor_2_digits(5421542154246, 24);
+//searchfor_2_digits(5421542154246, 24);
 
 
-
+function sorting_numbers_decsending (){
+    let randomList = StringEntrytoArray();
+    let min = 100;
+    for (let i = 0; i < randomList.length; i++) {
+        for (let j = 0; j < randomList.length; j++)
+        if (randomList[i] > randomList[j]) {
+            min = randomList[i];
+            randomList[i] = randomList[j];
+            randomList[j] = min;
+        }
+    }
+ return randomList;
+}
+let a = sorting_numbers_decsending();
+console.log(a);
