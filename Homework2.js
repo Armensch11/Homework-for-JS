@@ -413,34 +413,41 @@ console.log(max_min_array);
 
 /* 
 now lets make a function that will get an array from a string,
-which contains numbers separated by comas
+which contains numbers separated by comas , solved for negative elements also
 */
-function StringEntrytoArray() {  let stringOf_Numbers = prompt('enter numbers separated by comas');
+function StringEntrytoArray() {  let stringOf_Numbers = prompt('enter anything containing numbers');
 let get_Numbers = [];
 let number_Holder = '';
-//console.log(stringOf_Numbers.length);
-    for ( let i = 0, j = 0; i < stringOf_Numbers.length; i++) {
+let i = 0
+console.log(stringOf_Numbers.length);
+    for (  j = 0; i < stringOf_Numbers.length; i++) {
        
-        if (!isNaN(+stringOf_Numbers[i])) {
-            number_Holder += stringOf_Numbers[i];
-        } else if (Boolean(+stringOf_Numbers[i])==false) {
+        if (!isNaN(stringOf_Numbers[i]) && (stringOf_Numbers[i] !==' ' || stringOf_Numbers[i] !== " ")) {
+            if (stringOf_Numbers[i-1]!=="-") {
+                number_Holder += +stringOf_Numbers[i];
+            } else {
+                number_Holder +='-'+stringOf_Numbers[i];
+            }
+
+        } else if (!(+stringOf_Numbers[i]) && +stringOf_Numbers[i-1]) {
             get_Numbers[j] = +number_Holder;
             j++;
-            number_Holder = '';
+            number_Holder = '';//debugger;
+        }
+        if (i === stringOf_Numbers.length-1 && stringOf_Numbers[stringOf_Numbers.length-1] == +stringOf_Numbers[stringOf_Numbers.length-1]) {
+            get_Numbers.push(+number_Holder);
         }
     }
-    if (Boolean(+stringOf_Numbers[stringOf_Numbers.length-1])) {
-        get_Numbers.push(+number_Holder);
-    }
+  
+        
+    
 console.log (stringOf_Numbers);
 return get_Numbers;
 }
 
-let newNumbers = StringEntrytoArray();
-console.log(`new array is ${newNumbers}`);
-
-
-
+//let newNumbers = StringEntrytoArray();
+//console.log(`new array is ${newNumbers}`);
+//console.log(newNumbers)
 
 
 
@@ -463,9 +470,7 @@ function digitremover(number, digit) {
         }
         return +number;
 }
-
-// search for 2 digit number
-
+ 
 function searchfor_2_digits(number, search) {
     let counter = 0;
     number = String(number);    
@@ -481,7 +486,6 @@ function searchfor_2_digits(number, search) {
 
 //searchfor_2_digits(5421542154246, 24);
 
-// solved only for positive numbers
 function sorting_numbers_decsending (){
     let randomList = StringEntrytoArray();
     let min = 100;
