@@ -499,5 +499,33 @@ function sorting_numbers_decsending (){
     }
  return randomList;
 }
-let a = sorting_numbers_decsending();
-console.log(a);
+//let a = sorting_numbers_decsending();
+//console.log(a);
+
+
+// a function to find all prime numbers in the entered range
+
+function all_primes_intherange(lowerLimit, upperLimit) {
+    let checker = false;
+    let primeList = [];
+    if (+lowerLimit%2 === 0){
+        loop1:for (let i = +lowerLimit+1; i <= +upperLimit; i+=2) {
+                for (let j = 3; j < i/2; j+=2) {
+                if ( i % j !== 0 ) { checker = true; 
+                } else { checker = false;break;}  
+            }
+            if (checker === true) { primeList.push(i);}
+        }
+    } else {
+        for (let i = +lowerLimit; i <= +upperLimit; i+=2) {
+            for (let j = 1; j < i/2; j+=2) {
+                if ( i % j === 0 ) { checker = false;
+                } else { checker = true;}   
+            }
+            if (checker === true) { primeList.push(i);}
+        }
+    }
+   return primeList;
+}
+let primesInTheRange = all_primes_intherange(18,100);
+console.log(primesInTheRange);
