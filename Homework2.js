@@ -518,14 +518,14 @@ function all_primes_intherange(lowerLimit, upperLimit) {
         }
     } else {
         for (let i = +lowerLimit; i <= +upperLimit; i+=2) {
-            for (let j = 1; j < i/2; j+=2) {
-                if ( i % j === 0 ) { checker = false;
-                } else { checker = true;}   
+            for (let j = 3; j < i/2; j+=2) {
+                if ( i % j !== 0 ) { checker = true;
+                } else { checker = false;}   
             }
             if (checker === true) { primeList.push(i);}
         }
     }
    return primeList;
 }
-let primesInTheRange = all_primes_intherange(18,100);
+let primesInTheRange = all_primes_intherange( 35, 64);
 console.log(primesInTheRange);
