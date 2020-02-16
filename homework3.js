@@ -22,14 +22,6 @@ let anySentence = prompt ('enter the sentence',);
 let myStr = anySentence;
 let arrayFrom_myStr = [];
 let switch_Words = entry_to_array_for_words();
-    //for (let i = 0; ; ) {
-     //   let word = prompt(`word ${i+1}`);
-     //   if (word !== null) { 
-     //   switch_Words.push(word);
-     //   i++;
-     //   } else {break;}
-    //}
-
 let start_Length = switch_Words.length;
 for (let i = 0; i < myStr.length; i++) {
     arrayFrom_myStr.push(myStr[i]);
