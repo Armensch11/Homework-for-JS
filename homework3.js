@@ -244,6 +244,7 @@ console.log(multed_Array);
 
 // not  related
 // fibonacci sequence counter
+// given first two members of fibonacci number , count the rest till the entered number 
 
 function fibonachi_till_the_number (upper_Number) {
     let fib_number = [];
