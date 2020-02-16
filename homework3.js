@@ -241,3 +241,24 @@ console.log(NumberRow);
 console.log(multed_Array);
 
 
+
+// not  related
+// fibonacci sequence counter
+
+function fibonachi_till_the_number (upper_Number) {
+    let fib_number = [];
+    fib_number[0] = 1;
+    fib_number[1] = 1;
+    for (let i = 2; ; ) {
+        fib_number [i] = fib_number [i-2] + fib_number[i-1];
+        if (fib_number [i] <= upper_Number) {
+            i++;
+        } else {fib_number.pop();
+            break;}
+                   
+    }
+    return fib_number;
+}
+
+let fib_sequence = fibonachi_till_the_number (+prompt());
+console.log(fib_sequence);
