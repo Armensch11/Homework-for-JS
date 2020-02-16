@@ -238,7 +238,6 @@ console.log(sum_of_Elements);
  }     
 let NumberRow = entry_to_array();
 let length = NumberRow.length;
-let mult_ofElements = 1;
 let multed_Array = [];
 for (let i = 0, j = 0; i < length; i++ ) {
     multed_Array[j] = NumberRow[i] * NumberRow[i+1];
