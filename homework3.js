@@ -5,7 +5,7 @@
     for (let i = 0; ; ) {
         let entry = prompt(`array element ${i+1}`);
         if (entry !== null) { 
-        entry_toArray.push(word);
+        entry_toArray.push(entry);
         i++;
         } else {break;}
     }
