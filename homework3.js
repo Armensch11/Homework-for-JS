@@ -263,3 +263,23 @@ function fibonachi_till_the_number (upper_Number) {
 
 let fib_sequence = fibonachi_till_the_number (+prompt());
 console.log(fib_sequence);
+
+//shows the file extention without using slice, or indexof methods
+let file_Name = prompt();
+let extention = '';
+let length = file_Name.length;
+let dot_index_holder = -1;
+for (let i = 0; i < length; i++) {
+    if (file_Name[i] === '.' ) {
+        dot_index_holder = i;
+    }
+} 
+if (dot_index_holder === -1) {
+    console.log('your file has no extention');
+} else {
+    for (let i = dot_index_holder + 1; i < length; i++) {
+        extention += file_Name[i];
+    } 
+    console.log(`extention of your file is ${extention}`);
+    
+}    
