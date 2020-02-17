@@ -48,8 +48,6 @@ if (j == start_Length) {
 /*  
 */
 
-
-
 function entry_to_array_for_numbers() {
     let entry_toArray = [];
     for (let i = 0; ; ) {
@@ -67,9 +65,25 @@ function entry_to_array_for_numbers() {
     return entry_toArray;
  }     
  
+
+ function sort_ascending(anyArray) {
+    let value_holder;
+    for( let i = 0; i < anyArray.length; i++) {
+        for ( let j = 0; j < anyArray.length; j++) {
+            if (anyArray[j] > anyArray[i]) {
+                value_holder = anyArray[i];
+                anyArray[i] = anyArray[j];
+                anyArray[j] = value_holder;
+
+            }
+
+        }
+    }
+return anyArray;
+}
  
- //function sort_ascending() { would be nice to know how transfer an array as an argument and return a sorted array
- //}
+ //function used on odds and evens array to sort ascending 
+ 
                                 
                                 
 let original_Array = entry_to_array_for_numbers();
@@ -84,7 +98,9 @@ for (let i = 0; i < length; i++) {
         } else {odds_Array.push(+original_Array[i]);}
 
     }
-}  
+} 
+odds_Array = sort_ascending(odds_Array); 
+evens_Array = sort_ascending(evens_Array);
 for (let i=0; i < evens_Array.length; i++){
     odds_Array.push(evens_Array[i]);
 }   
@@ -92,8 +108,6 @@ for (let i=0; i < evens_Array.length; i++){
 console.log(original_Array);
 console.log(evens_Array);
 console.log(odds_Array); 
-//console.log (odds_Array.concat(evens_Array));
-
 
 
 
