@@ -12,11 +12,9 @@
     return entry_toArray;
  }                               
                                 
+       
                                 
-                                
-                                
-                                
-                                // Exercise 1
+                       // Exercise 1
 
 let anySentence = prompt ('enter the sentence',);
 let myStr = anySentence;
@@ -57,7 +55,7 @@ function entry_to_array_for_numbers() {
     for (let i = 0; ; ) {
         let entry = prompt(`array element ${i+1}`);
         if (entry !== null) { 
-            if (isNaN(entry)) {
+            if (isNaN(entry) || entry === ' ') {
                 entry_toArray.push (entry);
                 i++;
             } else {
@@ -81,16 +79,20 @@ let evens_Array = [];
 
 for (let i = 0; i < length; i++) {
     if (original_Array[i] === + original_Array[i]) {
-        if (+original_Array[i] % 2 === 0) {
+        if (original_Array[i] % 2 === 0) {
             evens_Array.push(+original_Array[i]);
         } else {odds_Array.push(+original_Array[i]);}
 
     }
-}                                
+}  
+for (let i=0; i < evens_Array.length; i++){
+    odds_Array.push(evens_Array[i]);
+}   
+
 console.log(original_Array);
 console.log(evens_Array);
 console.log(odds_Array); 
-console.log (odds_Array.concat(evens_Array));
+//console.log (odds_Array.concat(evens_Array));
 
 
 
@@ -109,7 +111,7 @@ function entry_to_array_with_integrated_counter() {
     for (let i = 0; ; ) {
         let entry = prompt(`array element ${i+1}`);
         if (entry !== null) { 
-            if (isNaN(entry)) {
+            if (isNaN(entry) || entry ===' ') {
                 entry_toArray.push (entry);
                 i++;
                 countString += 1;
@@ -142,7 +144,7 @@ function entry_to_array_with_integrated_counter() {
     }
     return entry_toArray;
  }     
-// could skip this function actually, but may be neede for some manipulations on a single element of an array in the future 
+// could skip this function actually, but may be needed for some manipulations on a single element of an array in the future 
  function letter_counter (word) {
      let number_of_Letters = 0;
      number_of_Letters = word.length;
@@ -216,7 +218,7 @@ console.log(sum_of_Elements);
       for (let i = 0; ; i++ ) {
         let entry = prompt(`array element ${i+1}`);
         if (entry !== null) { 
-            if (isNaN(entry)) {
+            if (isNaN(entry) || entry === ' ') {
                 entry_toArray.push (entry);
                
             } else {
@@ -225,15 +227,18 @@ console.log(sum_of_Elements);
             }
         } else {break;}
     }
-    //console.log (`there were ${countNums} numbers and ${countString} strings in the array you entered `)
     return entry_toArray;
  }     
+ 
 let NumberRow = entry_to_array();
 let length = NumberRow.length;
 let multed_Array = [];
+// will not add element to Multed if any multiplier is not a number 
 for (let i = 0, j = 0; i < length; i++ ) {
+    if (NumberRow[i] === +NumberRow[i] && NumberRow[i+1] === + NumberRow[i+1]) {
     multed_Array[j] = NumberRow[i] * NumberRow[i+1];
     j++;
+    } else {continue;}
     if (j === length-1) {break;}
    
 }
