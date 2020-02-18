@@ -68,19 +68,20 @@ function entry_to_array_for_numbers() {
 
  function sort_ascending(anyArray) {
     let value_holder;
-    for( let i = 0; i < anyArray.length; i++) {
-        for ( let j = 0; j < anyArray.length; j++) {
-            if (anyArray[j] > anyArray[i]) {
-                value_holder = anyArray[i];
-                anyArray[i] = anyArray[j];
-                anyArray[j] = value_holder;
-
+    if (Array.isArray(anyArray)){
+        for( let i = 0; i < anyArray.length; i++) {
+            for ( let j = 0; j < anyArray.length; j++) {
+                if (anyArray[j] > anyArray[i]) {
+                    value_holder = anyArray[i];
+                    anyArray[i] = anyArray[j];
+                    anyArray[j] = value_holder;
+                }
             }
-
         }
+        return anyArray;
     }
-return anyArray;
 }
+ 
  
  //function used on odds and evens array to sort ascending 
  
