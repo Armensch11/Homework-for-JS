@@ -2,7 +2,7 @@
 the point of starting from the end was like to go forward by length of the search word,
 after finding the last letter of search word, it will check next letter for match, 
 if during that a non match occures, the new index of search start will be "non match index" + "the length of the search word"
-
+it is not working as supposed, something is wrong
 */
 function word_search(sentence,word) {
     let lange = word.length;
