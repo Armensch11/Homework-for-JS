@@ -4,30 +4,30 @@ after finding the last letter of search word, it will check next letter for matc
 if during that a non match occures, the new index of search start will be "non match index" + "the length of the search word"
 
 */
-function word_search(sentence, word) {
+function word_search(sentence,word) {
     let lange = word.length;
     let match = 0;
     let indexof_Match;
     let newStart = 0;
-    for (let i = lange-1; i < sentence.length;) {
+    higherloop:for (let i = lange-1; i < sentence.length; i++) {
         if (word[lange-1] === sentence[i]) {
             for ( let j = 1; j < lange; j++) {
                 if (word[lange-1-j] === sentence [i-j]) {
                     match++;
                     indexof_Match = i-lange+1;
-                } else {newStart = i-j;
-                        i = newStart + lange; 
-                        break;}
-            }
-        } else {i++;}
-
-
-        if (match === lange-1) {
-            console.log (`there is a match on index ${indexof_Match}`);
-        }
+                    if ((match+1) === lange) {
+                        console.log (`there is a match on index ${indexof_Match}`);
+                        break higherloop;
+                } 
+            }else {newStart = i-j;
+                match = 0;
+                //i = newStart + lange; 
+                break;}
+        } 
     }
-
-
+        
+        }
+    
 } 
 
-let search = word_search ('54gsfddk542111aLba254212454al12544545kasfassdfadfkasalgaf','lgaf');
+let search = word_search ('55545f4g5sdf4g54fdg54sdf5g4s5df4g5sdf4gkasfassdfadfklgaf212121212121212','kasf');
