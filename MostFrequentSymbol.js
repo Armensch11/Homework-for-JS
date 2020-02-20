@@ -17,16 +17,34 @@ function find_the_symbol(symbol,symbolRow) {
 
 }
 
-
-
-
-
-
-
-function mostfrequent_symbol(anySymbolRowOriginal) {
-
+function transfer_all_symbols_to_check(symbolRow) {
+    let ArrayElementinArray = [];
+    for (let i = 0; i < symbolRow.length; i++) {
+        ArrayElementinArray[i] = find_the_symbol(symbolRow[i], symbolRow);
+    }
+    
+  return ArrayElementinArray;  
 }
-let someRow = ['a', 'as','a',
-'ds',,'a','a','sa','s','as','a','s','d','sd','ds','sd','d','we','e','w','d'];
-let frequency_checker = find_the_symbol('a',someRow);
-console.log(frequency_checker);
+
+
+let symforcheck = ['s','s','a','s','s','s','a','d','d','d'];
+
+let tempArray = transfer_all_symbols_to_check(symforcheck);
+//now there is a need to eliminate same elements from our two dimensional array 
+
+let finalArray = [];
+let max = 0;
+let k = 0;
+let maxarray = [];
+for (let i = 0; i < tempArray.length; i++) {
+    for (let j = 0; j < tempArray.length; j++){
+        if (max < tempArray [i][1]) {
+            maxarray[k] = tempArray[i][1];
+        }
+
+    }
+}
+
+console.log(maxarray);
+
+console.log(tempArray);
