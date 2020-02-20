@@ -27,24 +27,25 @@ function transfer_all_symbols_to_check(symbolRow) {
 }
 
 
-let symforcheck = ['s','s','a','s','s','s','a','d','d','d'];
+let symforcheck = ['s','s','a',5,5,5,5,5,5,,5,5,5,5,5,5,5,'s','s',4,5,5,65,65,45,21,656,5,'d','d','d','s','a','d','d','d'];
 
 let tempArray = transfer_all_symbols_to_check(symforcheck);
 //now there is a need to eliminate same elements from our two dimensional array 
 
-let finalArray = [];
+
 let max = 0;
 let k = 0;
 let maxarray = [];
 for (let i = 0; i < tempArray.length; i++) {
     for (let j = 0; j < tempArray.length; j++){
         if (max < tempArray [i][1]) {
-            maxarray[k] = tempArray[i][1];
+            max = tempArray [i][1];
+            maxarray[k] = tempArray[i];
         }
 
     }
 }
-
+console.log(tempArray);
 console.log(maxarray);
 
-console.log(tempArray);
+
