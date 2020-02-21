@@ -17,7 +17,7 @@ function find_the_symbol(symbol,symbolRow) {
 
 }
 
-// function that each array element with its frequency in the array 
+// function that returns array of nested arrays, which contain symbol and how many times it  occurs in the first array 
 function transfer_all_symbols_to_check(symbolRow) {
     let ArrayElementinArray = [];
     for (let i = 0; i < symbolRow.length; i++) {
@@ -54,6 +54,7 @@ for (let i = 0; i < tempArray.length; i++) {
 
 }
 //console.log(max_freq_arr);
+// the result must be array of nested arrays, without repetitions, I know the length of final array, and values in its first nested array
 let finalArray = [];
 let lengthofFinalArray = max_freq_arr.length/max_freq;
 finalArray[0] = max_freq_arr[0];
