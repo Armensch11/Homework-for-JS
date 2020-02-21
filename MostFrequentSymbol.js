@@ -60,11 +60,32 @@ let lengthofFinalArray = max_freq_arr.length/max_freq;
 finalArray[0] = max_freq_arr[0];
 console.log(finalArray[0]);
 console.log(lengthofFinalArray);
-//for (let i = 1; i <= max_freq_arr.length; i++) {
-//    if (finalArray[0][0] === max_freq_arr[i][0]) {
-//        max_freq_arr[i] = '';
-//    }
-//}
-//console.log(finalArray);
-//console.log(max_freq_arr);
+// this part solved by Davit, the tutor
+const result = []
+
+for(let i = 0; i < max_freq_arr.length; i++){
+
+        let isExist = false;
+
+        for(let j = 0; j < result.length; j++){
+
+            if(result [j] && result[j][0] === max_freq_arr[i][0]){
+
+                isExist = true;
+
+                break;
+
+            }
+
+        }
+
+    if(!isExist){
+
+    result.push(max_freq_arr[i]);
+
+    }
+
+}
+
+console.log(result);
 
