@@ -17,6 +17,7 @@ function find_the_symbol(symbol,symbolRow) {
 
 }
 
+// function that each array element with its frequency in the array 
 function transfer_all_symbols_to_check(symbolRow) {
     let ArrayElementinArray = [];
     for (let i = 0; i < symbolRow.length; i++) {
@@ -26,26 +27,43 @@ function transfer_all_symbols_to_check(symbolRow) {
   return ArrayElementinArray;  
 }
 
+// now the main difficulty I has : eliminate repeating elements
 
-let symforcheck = ['s','s','a',5,5,5,5,5,5,,5,5,5,5,5,5,5,'s','s',4,5,5,65,65,45,21,656,5,'d','d','d','s','a','d','d','d'];
+
+
+
+let symforcheck = ['s','s',6,6,6,6,6,6,6,'d','a',5,5,5,5,'s','s',4,5,5,65,65,45,21,656,5,'d','d','d','s','a','d','d','d'];
 
 let tempArray = transfer_all_symbols_to_check(symforcheck);
-//now there is a need to eliminate same elements from our two dimensional array 
 
+//console.log (tempArray);
 
-let max = 0;
+let max_freq = 0;
+let max_freq_arr = [];
 let k = 0;
-let maxarray = [];
 for (let i = 0; i < tempArray.length; i++) {
-    for (let j = 0; j < tempArray.length; j++){
-        if (max < tempArray [i][1]) {
-            max = tempArray [i][1];
-            maxarray[k] = tempArray[i];
+    for ( let j = 0; j < tempArray.length; j++){
+        if (tempArray[j][1] > max_freq) {
+            max_freq = tempArray[j][1];        
         }
-
     }
-}
-console.log(tempArray);
-console.log(maxarray);
+    if( tempArray[i][1] === max_freq ) {
+        max_freq_arr [k] = tempArray[i];
+        k++;
+    }
 
+}
+//console.log(max_freq_arr);
+let finalArray = [];
+let lengthofFinalArray = max_freq_arr.length/max_freq;
+finalArray[0] = max_freq_arr[0];
+console.log(finalArray[0]);
+console.log(lengthofFinalArray);
+//for (let i = 1; i <= max_freq_arr.length; i++) {
+//    if (finalArray[0][0] === max_freq_arr[i][0]) {
+//        max_freq_arr[i] = '';
+//    }
+//}
+//console.log(finalArray);
+//console.log(max_freq_arr);
 
