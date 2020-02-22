@@ -19,6 +19,7 @@ for (let i = 1; i < str.length; i++) {
     if (!check_for_symbol(str[i], uniq_Holder)) { 
         uniq_Holder += str[i];
     } else {uniqs_array.push(uniq_Holder);
+        // xndri imasty es i-ic sharunakelu mej er, che?
         i = str.indexOf(str[i],str.indexOf(uniq_Holder));
         uniq_Holder = '';
        
