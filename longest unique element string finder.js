@@ -20,7 +20,7 @@ for (let i = 1; i < str.length; i++) {
         uniq_Holder += str[i];
     } else {uniqs_array.push(uniq_Holder);
         // xndri imasty es i-ic sharunakelu mej er, che?
-        //sa mi qich chisht chi, ete uniq_Holder-y krknvi, infinite loop voncor stacvelu 
+        //skzbic mi qich chisht chei arel , ete uniq_Holder-y krknver, infinite loop-er voncor stacvelu 
         //i = str.indexOf(str[i],str.indexOf(uniq_Holder));
         i = str.indexOf(str[i], (i - uniq_Holder.length));
         uniq_Holder = '';
