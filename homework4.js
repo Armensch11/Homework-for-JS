@@ -193,3 +193,25 @@ function half_romb(limit) {
 }
 half_romb(10);
 
+
+
+//full romb
+// argumenti chapov chi stacvum sarqel, -num +num aranqi 0-n misht gumarvelu patcharov
+function romb(nummer){
+    if (nummer >= 2) {   
+       let row;
+       for (let i = -(nummer-1); i <= nummer-1; i++) {
+           row = "";
+           for (let j = 0; j <= (2*(nummer-1)-Math.abs(i)); j++) {
+
+                   if (j >= Math.abs(i)) {row +=" * ";
+                   } else {row+="   ";}
+               
+           }
+           row+='\n';
+           console.log (row);
+       }
+   }else return console.log('can\'t draw rombus by that side');  
+}
+romb(3)
+
