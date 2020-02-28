@@ -110,10 +110,19 @@ function remove_dublicates(Row) {
     }
 return noDublic;
 }
+function array_xerox(row){
+    let newRow = [];
+    for (let i = 0; i < row.length; i++) {
+        newRow[i] = row[i];
+    }
+    return newRow;
+}
 
 let yourArray = [2,5,6,4,5,8,8,8,10,10,9,9,9,12,12,4,7,2,5,4];
-let second_max = remove_dublicates(sort_descending(yourArray));
-console.log(second_max[1]);
+let newArray = array_xerox(yourArray);
+let second_max = remove_dublicates(sort_descending(newArray));
+console.log(yourArray.indexOf(second_max[1]));
+console.log(yourArray);
 
 
 
